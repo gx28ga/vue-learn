@@ -1,17 +1,20 @@
 <template>
     <div>
-        <h1>{{msg}}</h1>
-        <div><input type="text" v-model="mInput"></div>
+        <TodoList></TodoList>
     </div>
 </template>
 
 <script>
+import TodoList from "./../components/TodoList";
+
 export default {
+    components:{
+        TodoList
+    },
     name:"home",
     data(){
         return {
-            msg:"abc",
-            mInput:"yes yes yes yes yes"
+            
         }
     }
 }
