@@ -1,25 +1,33 @@
 <template>
-    <div>
-        <TodoList></TodoList>
+    <div class="content">
+       <Swiper></Swiper>
     </div>
 </template>
 
 <script>
-import TodoList from "./../components/TodoList";
 
-export default {
-    components:{
-        TodoList
-    },
-    name:"home",
-    data(){
+import Swiper from "./../components/Swiper";
+
+export default {    
+    name: "home",
+    data() {
         return {
-            
-        }
-    }
-}
+         
+        };
+    },
+    methods:{
+        
+
+    },
+    components: {
+        Swiper
+    },
+    
+};
 </script>
 
 <style>
-
+ .swiper-container{
+     height: 150px;
+ }
 </style>

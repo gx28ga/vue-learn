@@ -1,5 +1,8 @@
 <template>
-    <div></div>
+    <div>
+        <ComponentA></ComponentA>
+        <ComponentB></ComponentB>
+    </div>
 </template>
 
 <script>
