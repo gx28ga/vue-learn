@@ -31,6 +31,7 @@
                 </table>
 
             </div>
+            
         </div>
         
     </div>
@@ -48,7 +49,8 @@ export default {
     data(){
         return {
             products:[],
-            checkAll:false
+            checkAll:false,
+            testBool:true
         }
     },
     filters:{

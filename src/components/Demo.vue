@@ -17,6 +17,22 @@
             </div>
             
         </div>
+        <button @click="testBool=!testBool">click </button>
+
+        <template v-if="testBool">
+            <div class="col-sm-12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, ullam in! Accusantium obcaecati aliquid accusamus earum velit, ipsa at adipisci error ea perferendis eaque sit sint quaerat fugit maxime nobis.
+                <input type="text">
+            </div>
+        </template>
+        <template v-else>
+            <div class="col-sm-12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam cupiditate eligendi autem quae veritatis, magni quasi cumque ducimus id ad exercitationem maiores quo, ullam porro ratione repudiandae, libero excepturi.
+                <input type="text">
+            </div>
+        </template>
+
+        <div @click="trig">{{m}}</div>
         
     </div>
 
@@ -25,8 +41,10 @@
 <script>
 export default {
     name:"demo",
+    props:["m"],
     data(){
         return {
+            testBool:true,
             multiple:[]
             // gender:"A",
             // fruits:["apple","pear","peach"],
@@ -43,6 +61,9 @@ export default {
         },
         grandson(){
             alert("grandson")
+        },
+        trig(){
+            this.$emit("hh",88888)
         }
     }
 

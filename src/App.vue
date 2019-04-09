@@ -1,20 +1,28 @@
 <template>
-  <div id="app">
-    <Demo></Demo>
-  </div>
+    <div id="app">
+        <EventBus></EventBus>
+        
+    </div>
 </template>
 
 <script>
-import Demo from "./components/Demo";
+import EventBus from "./components/EventBus";
 
 export default {
-  name: 'app',
-  components: {
-    Demo
-  }
-}
+    name: "app",
+    data() {
+        return {
+            color: "danger"
+        };
+    },
+    components: {
+        EventBus
+    },
+    methods: {
+        
+    }
+};
 </script>
 
 <style>
-
 </style>
