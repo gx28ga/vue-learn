@@ -1,41 +1,42 @@
 <template>
-     <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
-            
-            <swiper-slide v-for="(slide, index) in slides" :key="index">I'm Slide {{slide}}</swiper-slide>
-            
-
-            
-        </swiper>
+    <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+        <swiper-slide 
+            v-for="(slide, index) in source" 
+            :key="index"
+            :style="{backgroundImage:'url('+slide+')'}"> </swiper-slide>
+    </swiper>
 </template>
 
 <script>
-import 'swiper/dist/css/swiper.css'
+import "swiper/dist/css/swiper.css";
 
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 export default {
-    
-    data(){
+    created() {
+        // this.axios.get("api/slides").then(res=>{
+        //     console.log(res.data);
+        // })
+    },
+
+    data() {
         return {
-            swiperOption:{
-                autoplay:true
+            swiperOption: {
+                autoplay: true
             },
-            slides:[1,2,3,4,5]
-
-        }
+            slides: [1, 2, 3, 4, 5]
+        };
     },
-    components:{
-        swiper, swiperSlide
-        
+    props: ["source"],
+    components: {
+        swiper,
+        swiperSlide
     },
-    methods:{
-        callback(){
-
-        }
+    methods: {
+        callback() {}
     }
-}
+};
 </script>
 
 <style>
-
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         
-        <Navbar>首页</Navbar>
+        
 
         <Tab></Tab>
         <router-view/>
@@ -11,7 +11,7 @@
 <script>
 
 
-import Navbar from "./components/Navbar";
+
 import Tab from "./components/Tab";
 
 
@@ -23,7 +23,7 @@ export default {
     },
     components: {
         Tab,
-        Navbar
+
     },
     methods: {}
 };
@@ -33,6 +33,11 @@ export default {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: #333333;
+    
 }
 ul,
 li {

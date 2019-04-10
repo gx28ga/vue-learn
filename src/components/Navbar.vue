@@ -31,8 +31,10 @@ export default {
 
 <style lang="scss" scoped>
     .navbar{
+        background-color: #ffffff;
         border-bottom: 1px solid #eee;
         position: fixed;
+        z-index: 10;
         height: 44px;
         line-height: 44px;
         width: 100%;

@@ -16,7 +16,8 @@ const routes = [
     {path:"/add",component:Add},
     {path:"/collect",component:Collect},
     {path:"/list",component:List},
-    {path:"/detail",component:Detail},
+    {name:"detail",path:"/detail/:bid",component:Detail},
+    {path:"",redirect:"/home"}
 ]
 
 

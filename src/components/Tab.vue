@@ -35,7 +35,9 @@ export default {
     }
 
     .bar-tab{
+        background-color: #ffffff;
         position: fixed;
+        z-index: 10;
         bottom: 0;
         left: 0;
         height: 50px;
