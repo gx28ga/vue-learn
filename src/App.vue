@@ -1,19 +1,21 @@
 <template>
     <div id="app">
-        
-        
 
         <Tab></Tab>
-        <router-view/>
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive">
+            </router-view>
+
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive">
+
+        </router-view>
+
     </div>
 </template>
 
 <script>
-
-
-
 import Tab from "./components/Tab";
-
 
 export default {
     name: "app",
@@ -22,8 +24,7 @@ export default {
         return {};
     },
     components: {
-        Tab,
-
+        Tab
     },
     methods: {}
 };
@@ -35,9 +36,8 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body {
     color: #333333;
-    
 }
 ul,
 li {
@@ -51,17 +51,16 @@ button {
     appearance: none;
 }
 
-
-
-.fl{
+.fl {
     float: left;
 }
 
-.fr{
+.fr {
     float: right;
 }
-.content{
-    padding-top: 44px;padding-bottom: 50px;
+.content {
+    padding-top: 44px;
+    padding-bottom: 50px;
 }
 </style>
 

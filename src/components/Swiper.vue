@@ -1,9 +1,15 @@
 <template>
-    <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
-        <swiper-slide 
-            v-for="(slide, index) in source" 
+    <swiper
+        :options="swiperOption"
+        ref="mySwiper"
+        @someSwiperEvent="callback"
+    >
+        <swiper-slide
+            v-for="(slide, index) in source"
             :key="index"
-            :style="{backgroundImage:'url('+slide+')'}"> </swiper-slide>
+            :style="{backgroundImage:'url('+slide+')'}"
+        >
+        </swiper-slide>
     </swiper>
 </template>
 
@@ -24,7 +30,7 @@ export default {
             swiperOption: {
                 autoplay: true
             },
-            slides: [1, 2, 3, 4, 5]
+            slides: []
         };
     },
     props: ["source"],
