@@ -22,7 +22,12 @@
                             class="del"
                             @click.stop="del(book.bookId)"
                         >删除</div>
+                        <div
+                            class="add"
+                            @click.stop="addToCart(book)"
+                        >添加到购物车</div>
                     </div>
+
                 </router-link>
             </ul>
 
@@ -34,7 +39,8 @@
 <script>
 import Navbar from "./../components/Navbar";
 import { getBooks, delBook } from "./../api";
-
+import { mapMutations } from "vuex";
+import * as Types from "./../store/mutations-type";
 export default {
     created() {
         this.initBooks();
@@ -50,6 +56,9 @@ export default {
         Navbar
     },
     methods: {
+        ...mapMutations({
+            addToCart: Types.CART_ADD
+        }),
         async initBooks() {
             let { hasMore, books } = await getBooks(this.offset);
             this.bookList = books;
@@ -98,7 +107,8 @@ export default {
             color: #ee2200;
         }
 
-        .del {
+        .del,
+        .add {
             position: absolute;
             right: 0;
             bottom: 0;
@@ -110,6 +120,9 @@ export default {
             &:active {
                 background-color: #882200;
             }
+        }
+        .add {
+            right: 40px;
         }
     }
 }

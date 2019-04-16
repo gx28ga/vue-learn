@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from "vue-router";
 
-import Detail from "./../views/Detail"
 
 
 Vue.use(VueRouter);
@@ -26,7 +25,7 @@ const routes = [
     },
     {
         name: "detail", path: "/detail/:bid",
-        component: Detail
+        component: () => import("./../views/Detail")
     },
     { path: "", redirect: "/home" }
 ]
@@ -34,6 +33,6 @@ const routes = [
 
 
 export default new VueRouter({
-
+    mode: "history",
     routes
 }) 
